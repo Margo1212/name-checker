@@ -29,10 +29,14 @@ const Header = () => {
   }
 
     const pushToLocalStorage = () => {
+        try {
         let history = [];
         history = JSON.parse(localStorage.getItem('name') || '');
         history.push(name)
         localStorage.setItem("name", JSON.stringify(history)) 
+        } catch(e) {
+            return null;
+        }
     }
   
 
