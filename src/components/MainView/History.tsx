@@ -7,7 +7,10 @@ const History = () => {
     const [query, setQuery] = useState('')
 
     const getDataFromLocaleStorage = () => {
-        const data = JSON.parse(localStorage.getItem("name")|| '')
+      if (localStorage.getItem('name') === null) {
+        localStorage.setItem("name", '[]')
+      }
+        const data = JSON.parse(localStorage.getItem("name") || '')
         setHistory(data)
     }
 useEffect(() => {

@@ -11,7 +11,6 @@ const Header = () => {
     const [gender, setGender] = useState('')
     const [nationality, setNationality] = useState('')
     const [displayName, setDisplayName] = useState('')
-    // const [loader, setLoader] = useState(false)
     const [error, setError] = useState(false)
 
    
@@ -41,7 +40,7 @@ const Header = () => {
   }
 
     const pushNameToLocalStorage = (name: string) => {
-        if (localStorage.getItem('name') === null) {
+        if (localStorage.getItem('name') === '') {
           localStorage.setItem("name", '[]')
         }
         
