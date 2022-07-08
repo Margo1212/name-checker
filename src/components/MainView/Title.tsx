@@ -6,7 +6,7 @@ type TitleProps = {
 
 const Title = ({children} : TitleProps) => {
   return (
-    <div>{children}</div>
+    <h1 className="text-white text-5xl font-bold m-10">{children}</h1>
   )
 }
 

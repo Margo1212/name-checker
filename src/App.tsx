@@ -1,4 +1,5 @@
 import MainView from "./components/MainView/MainView";
+import './index.css'
 
 
 const App = () => {

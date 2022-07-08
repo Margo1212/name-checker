@@ -5,13 +5,16 @@ import SearchInput from './SearchInput'
 import SearchResult from './SearchResult'
 import Title from './Title'
 import History from './History'
+import HistoryButton from './HistoryButton'
+import NoResultsFound from '../NoResultsFound'
 
 const Header = () => {
+    const [historyOpen, setHistoryOpen] = useState(false)
     const [checkedName, setCheckedName] = useState('')
     const [gender, setGender] = useState('')
     const [nationality, setNationality] = useState('')
     const [displayName, setDisplayName] = useState('')
-    const [error, setError] = useState(false)
+
 
    
       
@@ -26,12 +29,11 @@ const Header = () => {
               setGender(gender.gender)
               setNationality(nationality.country[0].country_id)
           })
-        ).catch((err) => {
-          setError(err)
-          setDisplayName('')
-          setGender('')
-          setNationality('')
-        })
+          ).catch(() => {
+            setDisplayName('')
+            setGender('')
+            setNationality('')
+          })
     }
 
 
@@ -40,6 +42,7 @@ const Header = () => {
   }
 
     const pushNameToLocalStorage = (name: string) => {
+      
         if (localStorage.getItem('name') === null) {
           localStorage.setItem("name", '[]')
         }
@@ -47,7 +50,7 @@ const Header = () => {
         let history = JSON.parse(localStorage.getItem('name') || '');
         history.push(name)
         localStorage.setItem("name", JSON.stringify(history))
-        window.location.reload()
+        
     }
   
 
@@ -56,22 +59,38 @@ const Header = () => {
     if(checkedName) {
         getApi(checkedName)
         pushNameToLocalStorage(checkedName)
+        
     }
-    return error
   };
+
+  const bla = () => {
+    setHistoryOpen(!historyOpen)
+  }
+
+
   
 
 
   return (
     <>
+      <div className="w-full h-96 border rounded-b-[50px] flex flex-col justify-center items-center p-10 bg-background">
+        <HistoryButton onClick={bla} />
         <Title>Check your name</Title>
-        <form onSubmit={handleClick}>
+        
+        <form className='flex flex-row' onSubmit={handleClick}>
             <SearchInput placeholder='Enter name' onChange={handleChange} />
             <SearchButton />
         </form>
-        {displayName ? <SearchResult gender={gender} nationality={nationality} displayName={displayName} /> : `No results`}
+        
+        </div>
+        {displayName ? <SearchResult gender={gender} nationality={nationality} displayName={displayName} /> : <NoResultsFound />}
 
-        <History />
+        <div className={`${historyOpen ?  'block' : 'hidden'} absolute top-0 right-0 flex flex-col min-h-screen p-2 bg-primary`}>
+          <button onClick={() => setHistoryOpen(!historyOpen)}>X</button>
+        <History  />
+        </div>
+        
+      
     </>
   )
 }

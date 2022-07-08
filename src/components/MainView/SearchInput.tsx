@@ -1,4 +1,6 @@
-import React, { ChangeEventHandler, useState } from 'react'
+import { ChangeEventHandler, useState } from 'react'
+import { BiSearch } from 'react-icons/bi';
+
 
 type InputProps = {
   value?: string;
@@ -15,7 +17,11 @@ const SearchInput = ({onChange, placeholder, value} : InputProps) => {
   };
   
   return (
-    <div><input required type="text" placeholder={placeholder} value={inputValue ?? ""} onChange={handleChange}/></div>
+    <div className='relative'>
+      <div className='absolute inset-y-0 left-0 flex items-center pl-3'>
+        <span className="text-border text-white text-lg pl-1 sm:text-sm"><BiSearch /></span>
+      </div>
+      <input className='placeholder:text-white placeholder:text-opacity-80 placeholder:font-normal w-96 px-10 p-2 border border-white bg-transparent rounded-[15px]' required type="text" placeholder={placeholder} value={inputValue ?? ""} onChange={handleChange}/></div>
   )
 }
 
