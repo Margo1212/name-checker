@@ -73,7 +73,8 @@ const Header = () => {
 
   return (
     <>
-      <div className="w-full h-96 border rounded-b-[50px] flex flex-col justify-center items-center p-10 bg-background">
+    <div className='h-screen w-full'>
+      <div className="w-full h-80 border rounded-b-[50px] flex flex-col justify-center items-center p-10 bg-background">
         <HistoryButton onClick={bla} />
         <Title>Check your name</Title>
         
@@ -90,7 +91,7 @@ const Header = () => {
         <History  />
         </div>
         
-      
+        </div>
     </>
   )
 }
