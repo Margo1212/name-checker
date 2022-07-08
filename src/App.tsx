@@ -1,4 +1,4 @@
-import Header from "./components/Header/Header";
+import MainView from "./components/MainView/MainView";
 
 
 const App = () => {
@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      <MainView />
     </div>
   );
 }
