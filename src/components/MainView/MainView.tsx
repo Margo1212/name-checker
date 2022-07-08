@@ -40,7 +40,7 @@ const Header = () => {
   }
 
     const pushNameToLocalStorage = (name: string) => {
-        if (localStorage.getItem('name') === '') {
+        if (localStorage.getItem('name') === null) {
           localStorage.setItem("name", '[]')
         }
         
