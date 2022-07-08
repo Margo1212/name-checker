@@ -11,7 +11,9 @@ const History = () => {
         localStorage.setItem("name", '[]')
       }
         const data = JSON.parse(localStorage.getItem("name") || '')
-        setHistory(data)
+        const uniqueData =  data.sort().filter((item: string, index: number) =>  data.indexOf(item.toLowerCase()) === index
+      );
+        setHistory(uniqueData)
     }
 useEffect(() => {
   getDataFromLocaleStorage()
