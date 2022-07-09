@@ -7,7 +7,7 @@ type InputProps = {
   onChange?: (value: string) => void;
 };
 
-const SearchInput = ({ onChange, placeholder, value }: InputProps) => {
+const SearchInput = ({ onChange, placeholder }: InputProps) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
