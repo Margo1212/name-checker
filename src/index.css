@@ -5,6 +5,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+input[type='text'], input[type='email'], input[type='search'],
+input[type='password'], textarea
+{
+-webkit-user-select: text;
+}
+
 html {
   margin: 0;
 }

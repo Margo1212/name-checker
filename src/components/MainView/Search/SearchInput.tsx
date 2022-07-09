@@ -26,6 +26,7 @@ const SearchInput = ({ onChange, placeholder }: InputProps) => {
         className="placeholder:text-white outline-none text-white placeholder:text-opacity-80 placeholder:font-normal w-full px-10 p-2 border border-white bg-transparent rounded-[15px]"
         required
         type="text"
+        name="search-input"
         placeholder={placeholder}
         value={inputValue ?? ""}
         onChange={handleChange}
