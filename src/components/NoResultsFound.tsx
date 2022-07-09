@@ -1,15 +1,15 @@
-import { SVGProps } from "react"
+import React, { SVGProps } from "react";
 
 const NoResultsFound = () => {
-    return (
-        <>
-        <div className="w-full h-96 flex flex-col justify-center items-center">
+  return (
+    <>
+      <div className="w-full h-96 flex flex-col justify-center items-center">
         <SvgComponent />
         <h2 className="font-bold opacity-80 my-5">No results found</h2>
-        </div>
-        </>
-    )
-}
+      </div>
+    </>
+  );
+};
 
 export const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -69,6 +69,6 @@ export const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       fill="#fff"
     />
   </svg>
-)
+);
 
-export default NoResultsFound
+export default NoResultsFound;
