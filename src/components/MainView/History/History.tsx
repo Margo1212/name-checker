@@ -11,9 +11,7 @@ const History = () => {
       localStorage.setItem("name", "[]");
     }
     const data = JSON.parse(localStorage.getItem("name") || "");
-    const uniqueData = data
-      .sort()
-      .filter((item: string, index: number) => data.indexOf(item) === index);
+    const uniqueData = [...new Set<string>(data.map((item: string) => item.toLowerCase()))]
     setHistory(uniqueData);
   };
 
@@ -38,13 +36,13 @@ const History = () => {
 
       <div>
         {history
-          .filter((item) => item?.includes(query))
+          .filter((item) => item.toLowerCase().includes(query.toLowerCase()))
           .map((item, idx) => (
             <div
               className="text-white text-sm rounded-md bg-background m-2 p-1 bg-opacity-50"
               key={idx}
             >
-              {item}
+            <p className="capitalize">{item}</p>
             </div>
           ))}
       </div>
