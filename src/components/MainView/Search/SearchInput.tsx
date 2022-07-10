@@ -1,7 +1,6 @@
 import React, { ChangeEventHandler, useState } from "react";
 import { BiSearch } from "react-icons/bi";
-import { ClipLoader
-} from "react-spinners";
+import { ClipLoader } from "react-spinners";
 
 type InputProps = {
   value?: string;
@@ -27,12 +26,11 @@ const SearchInput = ({ onChange, placeholder, loader }: InputProps) => {
       </div>
       <div className="absolute inset-y-0 right-0 flex items-center pr-3 pt-1">
         <span className="text-border text-background text-lg pl-1 sm:text-sm">
-        <ClipLoader color="#00AFA6" size={20}
- loading={loader} />
+          <ClipLoader color="#00AFA6" size={20} loading={loader} />
         </span>
       </div>
       <input
-      autoComplete="off"
+        autoComplete="off"
         className="placeholder:text-white outline-none text-white placeholder:text-opacity-80 placeholder:font-normal w-full px-10 p-2 border border-white bg-transparent rounded-[15px]"
         required
         pattern="[A-Z a-z]*"

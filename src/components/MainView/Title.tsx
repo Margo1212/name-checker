@@ -5,7 +5,11 @@ type TitleProps = {
 };
 
 const Title = ({ children }: TitleProps) => {
-  return <h1 className="text-white text-5xl font-bold m-10 mobile:text-3xl mobile:text-center">{children}</h1>;
+  return (
+    <h1 className="text-white text-5xl font-bold m-10 mobile:text-3xl mobile:text-center">
+      {children}
+    </h1>
+  );
 };
 
 export default Title;

@@ -11,7 +11,9 @@ const History = () => {
       localStorage.setItem("name", "[]");
     }
     const data = JSON.parse(localStorage.getItem("name") || "");
-    const uniqueData = [...new Set<string>(data.map((item: string) => item.toLowerCase()))]
+    const uniqueData = [
+      ...new Set<string>(data.map((item: string) => item.toLowerCase())),
+    ];
     setHistory(uniqueData);
   };
 
@@ -42,7 +44,7 @@ const History = () => {
               className="text-white text-sm rounded-md bg-background m-2 p-1 bg-opacity-50"
               key={idx}
             >
-            <p className="capitalize">{item}</p>
+              <p className="capitalize">{item}</p>
             </div>
           ))}
       </div>

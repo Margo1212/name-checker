@@ -22,7 +22,7 @@ const Header = () => {
       `https://api.nationalize.io?name=${name}`,
       `https://api.genderize.io?name=${name}`,
     ];
-    setLoader(true)
+    setLoader(true);
 
     axios
       .all(endpoints.map((endpoint) => axios.get(endpoint)))
@@ -31,7 +31,7 @@ const Header = () => {
           setDisplayName(nationality.name);
           setGender(gender.gender);
           setNationality(nationality.country[0].country_id);
-          setLoader(false)
+          setLoader(false);
         })
       )
       .catch(() => {
@@ -75,24 +75,25 @@ const Header = () => {
           <HistoryButton onClick={openHistory} />
           <Title>Check your name</Title>
 
-
           <form className="flex flex-row" onSubmit={handleClick}>
-            <SearchInput loader={loader} placeholder="Enter name" onChange={handleChange} />
+            <SearchInput
+              loader={loader}
+              placeholder="Enter name"
+              onChange={handleChange}
+            />
             <SearchButton />
           </form>
         </div>
-        
-        {displayName  ?
-        (<SearchResult
-          gender={gender}
-          nationality={nationality}
-          displayName={displayName}
-        />
-      )
-        
-           : <NoResultsFound />  }
-           
 
+        {displayName ? (
+          <SearchResult
+            gender={gender}
+            nationality={nationality}
+            displayName={displayName}
+          />
+        ) : (
+          <NoResultsFound />
+        )}
 
         <div
           className={`${
