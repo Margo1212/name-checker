@@ -96,8 +96,8 @@ const Header = () => {
 
         <div
           className={`${
-            historyOpen ? "translate-x-full" : "translate-x-0"
-          } transition-translate duration-500 ease-out absolute top-0 right-0 flex flex-col min-h-screen p-2 bg-primary`}
+            historyOpen ? "block" : "hidden"
+          } transition-opacity duration-500 ease-out absolute top-0 right-0 flex flex-col min-h-screen p-2 bg-primary`}
         >
           <button
             className="text-background absolute top-5 right-5 text-4xl"
