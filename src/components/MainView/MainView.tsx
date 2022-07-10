@@ -10,7 +10,7 @@ import HistoryButton from "./History/HistoryButton";
 import NoResultsFound from "../NoResultsFound";
 
 const Header = () => {
-  const [historyOpen, setHistoryOpen] = useState(true);
+  const [historyOpen, setHistoryOpen] = useState(false);
   const [checkedName, setCheckedName] = useState("");
   const [gender, setGender] = useState("");
   const [nationality, setNationality] = useState("");
