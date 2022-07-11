@@ -9,7 +9,7 @@ import History from "./History/History";
 import HistoryButton from "./History/HistoryButton";
 import NoResultsFound from "../NoResultsFound";
 
-const Header = () => {
+const MainView = () => {
   const [historyOpen, setHistoryOpen] = useState(false);
   const [checkedName, setCheckedName] = useState("");
   const [gender, setGender] = useState("");
@@ -113,4 +113,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default MainView;
